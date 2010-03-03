@@ -1,4 +1,4 @@
-%h1 Listing <%= plural_name.humanize %>
+%h1 t("Listing") <%= plural_name.humanize %>
 
 %table
   %tr
@@ -11,8 +11,8 @@
 <% for attribute in attributes -%>
       %td= h <%= singular_name %>.<%= attribute.name %>
 <% end -%>
-      %td= link_to 'Show', <%= singular_name %>
-      %td= link_to 'Edit', edit_<%= singular_name %>_path(<%= singular_name %>)
-      %td= link_to 'Destroy', <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to t('show'), <%= singular_name %>
+      %td= link_to t('edit'), edit_<%= singular_name %>_path(<%= singular_name %>)
+      %td= link_to t('destroy'), <%= singular_name %>, :confirm => t('sure destroy'), :method => :delete
 
-%p= link_to 'New <%= singular_name.humanize %>', new_<%= singular_name %>_path
+%p= link_to 't(new) <%= singular_name.humanize %>', new_<%= singular_name %>_path
